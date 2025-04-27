@@ -1,110 +1,97 @@
-AI Safety Incident Dashboard
+# AI Safety Incident Dashboard
+
 An interactive dashboard for monitoring and reporting AI safety incidents across your organization, built with React and Tailwind CSS.
 
-Features
-Display a list of AI safety incidents with their titles, severity levels, and reported dates
+## Features
 
-Filter incidents by severity level (Low, Medium, High, or All)
+- Display a list of AI safety incidents with their titles, severity levels, and reported dates
+- Filter incidents by severity level (Low, Medium, High, or All)
+- Sort incidents by date (newest first or oldest first)
+- Expand/collapse incident details
+- Report new incidents through a form with validation
+- Responsive design for all device sizes
 
-Sort incidents by date (newest first or oldest first)
+## Tech Stack
 
-Expand/collapse incident details
+- **Frontend Framework:** React.js
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide React
+- **Build Tool:** Vite (`npm create vite@latest`)
 
-Report new incidents through a form with validation
+## Prerequisites
 
-Responsive design for all device sizes
+- Node.js
+- npm
 
-Tech Stack
-Frontend Framework: React.js
+## Installation
 
-Styling: Tailwind CSS
-
-Icons: Lucide React
-
-Build Tool: Vite (created using npm create vite@latest)
-
-Prerequisites
-Node.js
-
-npm
-
-Install Dependencies
+```bash
 npm install
-Start the Development Server
-npm run dev
-Building for Production
-To create an optimized production build:
+```
 
+## Running the App
+
+```bash
+npm run dev
+```
+
+## Building for Production
+
+```bash
 npm run build
-Project Structure
+```
+
+## Project Structure
+
+```
 ai-safety-dashboard/
 ├── public/
 ├── src/
 │   ├── components/
-│   │   ├── AISafetyDashboard.jsx      # Main dashboard component
-│   │   ├── SeverityBadge.jsx          # Severity indicator component
-│   │   ├── IncidentCard.jsx           # Individual incident display
-│   │   ├── FilterControls.jsx         # Filter and sort controls
-│   │   └── IncidentForm.jsx           # Form for new incidents
+│   │   ├── AISafetyDashboard.jsx
+│   │   ├── SeverityBadge.jsx
+│   │   ├── IncidentCard.jsx
+│   │   ├── FilterControls.jsx
+│   │   └── IncidentForm.jsx
 │   ├── data/
-│   │   └── mockIncidents.js            # Mock data
+│   │   └── mockIncidents.js
 │   ├── utils/
-│   │   └── dateFormatter.js            # Date formatting utility
-│   ├── App.jsx                         # Main app component
+│   │   └── dateFormatter.js
+│   ├── App.jsx
 │   ├── main.jsx
 │   └── index.css
 ├── package.json
 └── README.md
-Design Decisions and Challenges
-Component Architecture
-I chose a modular, component-based architecture to promote:
+```
 
-Reusability: Components like SeverityBadge are reusable across the application.
+## Design Decisions and Challenges
 
-Maintainability: Each component has a single responsibility.
+### Component Architecture
 
-Testability: Smaller components are easier to test in isolation.
+- **Reusability:** Components like `SeverityBadge` can be reused across the application.
+- **Maintainability:** Each component has a single responsibility.
+- **Testability:** Smaller components are easier to test in isolation.
 
-State Management
-For this project size, React's built-in useState hook provides sufficient state management.
-For larger applications, I would consider:
+### State Management
 
-Context API for deeper component trees
+- Used React's built-in `useState`.
+- For larger applications, Context API, Redux, or React Query can be considered.
 
-Redux for more complex state management
+### Responsive Design
 
-React Query for server state management
+- Mobile-first approach.
+- Tailwind CSS flex and grid layouts used for adaptive designs.
 
-Responsive Design Approach
-The dashboard uses Tailwind's responsive utility classes to ensure a good experience across devices:
+### Challenges and Solutions
 
-Mobile-first design philosophy
+- **Handling Incident Expansion State:**  
+  Moved expansion state from parent component to local state inside each card for better performance.
 
-Flex layouts that adapt to different screen sizes
+- **Filter and Sort Logic:**  
+  Applied filtering before sorting to optimize performance.
 
-Grid layouts for the form and filter controls
+- **Form Validation:**  
+  Basic validation implemented. Future versions can have more robust patterns.
 
-Challenges and Solutions
-Handling Incident Expansion State:
-
-Initially implemented expansion state in the parent component
-
-Refactored to local state in each card component for better performance
-
-Filter and Sort Logic:
-
-Combined filtering and sorting operations
-
-Applied filters before sorting to optimize performance
-
-Form Validation:
-
-Implemented basic form validation to ensure required fields
-
-Future enhancement would include more robust validation patterns
-
-Severity Visualization:
-
-Used color-coding and badges to make severity levels immediately recognizable
-
-Ensured accessible color contrast for all severity levels
+- **Severity Visualization:**  
+  Used badges with color codes and ensured accessible contrast.
