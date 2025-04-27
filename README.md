@@ -1,7 +1,7 @@
-AI Safety Incident Dashboard
+#AI Safety Incident Dashboard
 An interactive dashboard for monitoring and reporting AI safety incidents across your organization, built with React and Tailwind CSS.
 
-Features
+#Features
 Display a list of AI safety incidents with their titles, severity levels, and reported dates
 Filter incidents by severity level (Low, Medium, High, or All)
 Sort incidents by date (newest first or oldest first)
@@ -9,7 +9,7 @@ Expand/collapse incident details
 Report new incidents through a form with validation
 Responsive design for all device sizes
 
-Tech Stack
+##Tech Stack
 Frontend Framework: React.js 
 Styling: Tailwind CSS 
 Icons: Lucide React 
@@ -17,10 +17,11 @@ Build Tool: The build tool here is Vite.
 npm create vite@latest
 
 
-Prerequisites:
+##Prerequisites:
 Node.js 
 npm 
 
+##Setup and Installation
 Install dependencies:
 npm install
 
